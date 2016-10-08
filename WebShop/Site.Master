@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebShop.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+	<link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Modak' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'/>
+
+	<link href="JavaScript1.js" rel="javaScript" type="text/javaScript" />
+	<link href="Styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<header>
+		<div id="holder1"><asp:ContentPlaceHolder ID="headerHolder" runat="server"></asp:ContentPlaceHolder></div>
+		<div id="gameTitle" style="padding-left:1.1em; z-index:2;" > Super - Power Shop  </div>
+		<div class="line" style="left:2%; top:50%;"> <hr class="style182" /></div>
+	</header>
+	
+	
+		<form id="form1" runat="server">
+			<div>
+				<nav>		
+					
+					<asp:Button CssClass="menuB" ID="HomeMenuB" runat="server" Text="Home" OnClick="HomeMenuB_Click"/>
+					<asp:Button CssClass="menuB" ID="ProductsMenuB" runat="server" Text="Products" OnClick="ProductsMenuB_Click"/>
+					<asp:Button CssClass="menuB" ID="AboutMenuB" runat="server" Text="About" OnClick="AboutMenuB_Click" />			
+					<asp:Button CssClass="menuB" ID="SearchMenuB" runat="server" Text="Search" OnClick="SearchMenuB_Click" />
+
+					<asp:Button CssClass="MenuB2" ID="OrdersReportMenuB" runat="server" Text="Orders Report" OnClick="OrdersReportMenuB_Click" />
+                    <asp:Button CssClass="MenuB2" ID="ItemsStockReportMenuB" runat="server" Text="Stock Report" OnClick="ItemsStockReportMenuB_Click" />
+                    <asp:Button CssClass="MenuB2" ID="ClientsMenuB" runat="server" Text="Clients Report" OnClick="ClientsMenuB_Click"/>
+
+                    <asp:Button  ID="logoutB" CssClass="userB" runat="server" Text="Logout" OnClick="logoutB_Click"/>
+					<asp:Button  ID="CartMenuB" CssClass="userB" runat="server" Text="Cart" OnClick="CartMenuB_Click"/>
+                    
+					<div class="line" style="left:59%; top:5%; width:40%;"> <hr class="style18" /></div>
+
+					
+				</nav>
+			</div>
+		   <div>
+			   <section>
+				   <div class="line2"><hr class="style14" /></div>
+				   
+                    
+				<asp:ContentPlaceHolder ID="ContentHolder" runat="server">
+	   
+				</asp:ContentPlaceHolder>
+
+				   
+			   </section>
+				
+		  </div>
+		</form>
+
+	<footer><div class="line2"><hr class="style14" /></div></footer>
+</body>
+</html>

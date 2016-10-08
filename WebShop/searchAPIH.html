@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html >
+<html data-ng-app="MoviesApp">
+<head>
+	<title></title>
+    <link href='https://fonts.googleapis.com/css?family=Modak' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css' />
+	<script type="text/javascript" src="Scripts/angular.js"> </script>
+	<script type="text/javascript" src="RestFullAPISearch.js"></script>
+</head>
+<body style="background: #D6E5A3; color:#546E50; font-size:20px;"  >
+    <style>
+        .subtitle{
+            position:absolute;
+            padding-top:20px;
+            left:5%;
+            font-size:28px;
+            font-family: 'Poiret One', cursive;
+            
+        }
+        .title{
+            position:absolute;
+            top:1%;
+            left:35%;
+            font-size:38px;
+            font-family: 'Modak', cursive;
+            
+        }
+        .searchB{
+	        width:100px;
+	        font-family: 'Poiret One', cursive;
+	        font-size:18px;
+	        color:#D6E5A3;
+	        font-weight:bold;
+	        background:#546E50;
+	        border:2px solid #394944;
+	        border-radius:8px;
+        }
+    </style>
+    <div class="title">Rest API Search</div>
+	<div ng-controller="mainController as ctrl">
+        <div class="subtitle" style="top:30px;">
+            Search: 
+            <input id="APISearchTB" type="text" data-ng-model="query" />
+            <input id="APISearchB" type="button" class="searchB" value="search" ng-click="httpGetFunction(query)" /> <br />
+
+        </div>
+       
+        <div class="subtitle" style="top:60px;">
+            Show:
+            <select ng-model="ctrl.selected"
+                    ng-options=" option as option.title for option in ctrl.movie" css="ddl">
+                {{option.title }}
+            </select>
+      </div>
+ 
+        <br />
+       <div style="position:absolute; top:150px; left:5%; width:800px;">
+           <label> {{ctrl.selected.content}}</label>
+       </div>
+           
+       
+
+
+
+</div>
+</body>
+</html>
